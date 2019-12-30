@@ -6,6 +6,60 @@ namespace BasicExercises
 {
     class Task
     {
+        public bool task35(int a, int b)
+        {
+            if(a < 100 && b > 200 || b < 100 && a > 200)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool task34(string a, string w)
+        {
+            if (a.Substring(0, w.Length) == w)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool task33(int a)
+        {
+            if(a % 3 == 0 || a % 7 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public string task32(string a)
+        {
+            string NewString = a.Substring(a.Length - 4, 4);
+            return NewString + NewString + NewString + NewString;
+        }
+        public void task31(int[] a, int[] b)
+        {
+            int[] newArr = new int[a.Length];
+            if(a.Length == b.Length)
+            {
+                
+                for (int i = 0; i < a.Length; i++)
+                {
+                    newArr[i] = a[i] * b[i];
+                }
+            }
+            for (int i = 0; i < newArr.Length; i++)
+            {
+                Console.Write(newArr[i] + " ");
+            }
+        }
         public void task30(string a)
         {
             char[] hmm = a.ToCharArray();

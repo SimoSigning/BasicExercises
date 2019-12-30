@@ -7,12 +7,25 @@ namespace BasicExercises
         static void Main(string[] args)
         {
             Task currentTask = new Task();
+            //35
+            Console.WriteLine(currentTask.task35(75, 250));
+            Console.WriteLine(currentTask.task35(250, 250));
+            //34
+            //   Console.WriteLine(currentTask.task34("Hello how are you?", "Hello"));
+            //33
+            /*   Console.WriteLine(currentTask.task33(15));
+               Console.WriteLine(currentTask.task33(21));
+               Console.WriteLine(currentTask.task33(22));*/
+            //32
+            //   Console.WriteLine(currentTask.task32("The quick brown fox jumps over the lazy dog."));
+            //31
+            //    currentTask.task31(new int[]{1, 3, -5, 4}, new int[] { 1, 4, -5, -2 });
             //30
-          //  currentTask.task30("4A2B");
+            //  currentTask.task30("4A2B");
             //29 
             //En anden gang
             //28
-        //    Console.WriteLine(currentTask.task28("Display the pattern like pyramid using the alphabet."));
+            //    Console.WriteLine(currentTask.task28("Display the pattern like pyramid using the alphabet."));
             //27
             //  Console.WriteLine(currentTask.task27(12));
             //26
