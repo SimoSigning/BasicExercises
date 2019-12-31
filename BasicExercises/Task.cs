@@ -6,6 +6,204 @@ namespace BasicExercises
 {
     class Task
     {
+        public void task50(int[] a)
+        {
+            int first = a[0];
+            for (int i = 0; i < a.Length-1; i++)
+            {
+                a[i] = a[i + 1];
+            }
+            a[a.Length - 1] = first;
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.Write(a[i] + " ");
+            } 
+        }
+        public bool task49(int[] a, int[] b)
+        {
+            if(a[0] == b[0] || a[a.Length-1] == b[b.Length-1])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool task48(int[] a)
+        {
+            if(a[0] == a[a.Length-1])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public int task47(int[] a)
+        {
+            int Returner = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                Returner += a[i];
+            }
+            return Returner;
+        }
+        public bool task46(int[] a, int b)
+        {
+            if(a[0] == b || a[a.Length-1] == b)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public int task45(int[] a, int b)
+        {
+            int counter = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if(a[i] == b)
+                {
+                    counter++;
+                }
+            }
+            return counter;
+        }
+        public string task44(string a)
+        {
+            string NewString = "";
+            for (int i = 0; i < a.Length; i+=2)
+            {
+                    NewString += a[i];
+            }
+            return NewString;
+        }
+        public bool task43(string a)
+        {
+            if(a.Length >= 5)
+            {
+                if(a.Substring(0,5) == "wwwww" || a.Substring(0, 5) == "WWWWW")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public string task42(string a)
+        {
+            if(a.Length >= 4)
+            {
+                string FirstFour = a.Substring(0, 4);
+                string Rest = a.Substring(4, a.Length - 4);
+                return FirstFour.ToLower() + Rest;
+            }
+            else
+            {
+                return a.ToUpper();
+            }
+        }
+        public bool task41(string a)
+        {
+            int counter = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if(a[i] == 'w' || a[i] == 'W')
+                {
+                    counter++;
+                }
+            }
+            if(counter >= 1 && counter <= 3)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public int task40(int a, int b)
+        {
+            if(a == b)
+            {
+                return 0;
+            }
+            else
+            {
+                if (Math.Abs(20 - a) < Math.Abs(20 - b))
+                {
+                    return a;
+                }
+                else
+                {
+                    return b;
+                }
+            }
+        }
+        public string task39(int a, int b, int c)
+        {
+            List<int> IntegerList = new List<int>() { a, b, c };
+            int Max = IntegerList[0];
+            int Min = IntegerList[0];
+            for (int i = 0; i < IntegerList.Count; i++)
+            {
+                if(IntegerList[i] > Max)
+                {
+                    Max = IntegerList[i];
+                }
+
+                if(IntegerList[i] < Min)
+                {
+                    Min = IntegerList[i];
+                }
+            }
+            return "Min: " + Min.ToString() + " Max: " + Max.ToString();
+        }
+        public string task38(string a)
+        {
+            if(a.Substring(0,2) == "PH")
+            {
+                return "PH";
+            }
+            else
+            {
+                return a;
+            }
+        }
+        public string task37(string a)
+        {
+            string Returner = string.Empty;
+            if(a.Substring(1,2) == "HP")
+            {
+                Returner = a.Remove(1, 2);
+            }
+            else
+            {
+                return a;
+            }
+            return Returner;
+        }
+        public bool task36(int a, int b)
+        {
+            if(a >= -10 && a <= 10 || b >= -10 && b <= 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool task35(int a, int b)
         {
             if(a < 100 && b > 200 || b < 100 && a > 200)
@@ -109,39 +307,34 @@ namespace BasicExercises
             return Sum;
         }
         public int task26()
-        {//Denne her er udfordrene og jeg skal tænke videre over mulige løsninger i fremtiden.
-            int counter = 0;
-            int PrimeSum = 0;
-            int PotentialPrime = 2;
-            while(counter < 500)
+        {
+            int PrimeCounter = 0;
+            int PrimeSum = 2;
+            int PotentialPrime = 3;
+            bool IsPrime;
+            while(PrimeCounter < 499) // Den skal starte fra én mindre end 500 for at give forventet resultat.
             {
-                if(task26HelperFunction(PotentialPrime) == true)
+                IsPrime = true;
+                for (int i = 2; i < PotentialPrime; i++)
                 {
-                    PrimeSum += PotentialPrime;
-                    counter++;
-                    PotentialPrime++;
+                    if(PotentialPrime % i == 0)
+                    {
+                        IsPrime = false;
+                        break;
+                    }
+                }
+                if(IsPrime == false)
+                {
+                   PotentialPrime++;
                 }
                 else
                 {
+                    PrimeSum += PotentialPrime;
                     PotentialPrime++;
+                    PrimeCounter++;
                 }
             }
             return PrimeSum;
-        }
-        public bool task26HelperFunction(int a)
-        {
-            if(a == 1){return false;}
-
-            if(a == 2){return true;}
-
-            for (int i = 2; i < a; i++)
-            {
-                if(a % i == 0)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
         public void task25()
         {

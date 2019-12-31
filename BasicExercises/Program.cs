@@ -7,9 +7,56 @@ namespace BasicExercises
         static void Main(string[] args)
         {
             Task currentTask = new Task();
+            //50
+         //   currentTask.task50(new int[]{1,2,3});
+            //49
+          /*  Console.WriteLine(currentTask.task49(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }, new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }));
+            Console.WriteLine(currentTask.task49(new int[] { 9, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }, new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }));
+            Console.WriteLine(currentTask.task49(new int[] { 9, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }, new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }));*/
+            //48
+            /*  Console.WriteLine(currentTask.task48(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }));
+              Console.WriteLine(currentTask.task48(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 2 }));*/
+            //47
+            //  Console.WriteLine(currentTask.task47(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }));
+            //46
+            /* Console.WriteLine(currentTask.task46(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }, 5));
+             Console.WriteLine(currentTask.task46(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }, 9));*/
+            //45
+            //  Console.WriteLine(currentTask.task45(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }, 5));
+            //44
+            //    Console.WriteLine(currentTask.task44("w3resource"));
+            //43
+            /* Console.WriteLine(currentTask.task43("ww"));
+             Console.WriteLine(currentTask.task43("wwwww"));*/
+            //42
+            /* Console.WriteLine(currentTask.task42("W3RE"));
+             Console.WriteLine(currentTask.task42("w3r"));
+             Console.WriteLine(currentTask.task42("W3RESOURCE"));*/
+            //41
+            /*    Console.WriteLine(currentTask.task41("w3resource"));
+                Console.WriteLine(currentTask.task41("3resource"));
+                Console.WriteLine(currentTask.task41("www3resource"));
+                Console.WriteLine(currentTask.task41("wwww3resource"));*/
+            //40
+            /*  Console.WriteLine(currentTask.task40(15, 12));
+              Console.WriteLine(currentTask.task40(5, 5));
+              Console.WriteLine(currentTask.task40(3, 17));*/
+            //39
+            //    Console.WriteLine(currentTask.task39(15, 25, 35));
+            //38
+            /*Console.WriteLine(currentTask.task38("PHP"));
+              Console.WriteLine(currentTask.task38("Cake"));*/
+            //37
+            /*   Console.WriteLine(currentTask.task37("PHP"));
+               Console.WriteLine(currentTask.task37("Cake"));*/
+            //36
+            /*    Console.WriteLine(currentTask.task36(-8, 5));
+                Console.WriteLine(currentTask.task36(-8, 20));
+                Console.WriteLine(currentTask.task36(20, 5));
+                Console.WriteLine(currentTask.task36(-20, 20));*/
             //35
-            Console.WriteLine(currentTask.task35(75, 250));
-            Console.WriteLine(currentTask.task35(250, 250));
+            /*    Console.WriteLine(currentTask.task35(75, 250));
+                Console.WriteLine(currentTask.task35(250, 250));*/
             //34
             //   Console.WriteLine(currentTask.task34("Hello how are you?", "Hello"));
             //33
@@ -29,7 +76,7 @@ namespace BasicExercises
             //27
             //  Console.WriteLine(currentTask.task27(12));
             //26
-            //   Console.WriteLine(currentTask.task26());
+            //   Console.WriteLine(currentTask.task26()); 
             //25
             //  currentTask.task25();
             //24
