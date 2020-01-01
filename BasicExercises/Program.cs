@@ -8,9 +8,8 @@ namespace BasicExercises
         {
             Task currentTask = new Task();
             //62
-            Console.WriteLine("For big string");
+            currentTask.task62("p(rq)st");
             currentTask.task62("ab(cd(ef)gh)ij");
-            Console.WriteLine("For small string");
             currentTask.task62("(p(rq)st)");
             //61
            // currentTask.task61(new int[] { -5, 236, 120, 70, -5, -5, 698, 280 });

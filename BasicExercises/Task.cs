@@ -7,7 +7,7 @@ namespace BasicExercises
     class Task
     {
         public void task62(string a)
-        {
+        { //En dag når jeg får tid skal jeg prøve at lave en mere elegant og mindre rodet løsning. Men det her giver forventet output til de foreslåede input..
             string Newa = "";
             string FirstStr = "";
             string LastStr = "";
@@ -15,6 +15,14 @@ namespace BasicExercises
             int LastParenthesisindex = 0;
             int FirstIndexToFirstParenthesis = 0;
             int LastIndexToLastParenthesis = 0;
+            int ParenthesisCounter = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if(a[i] == '(' || a[i] == ')')
+                {
+                    ParenthesisCounter++;
+                }
+            }
             for (int i = 0; i < a.Length; i++)
             {
                 if (a[i] == '(')
@@ -74,13 +82,33 @@ namespace BasicExercises
             {
                 FirstStr += FirstStrChar[i];
             }
-            int hmm = a.Length - FirstStr.Length - LastStr.Length - FirstIndexToFirstParenthesis - LastIndexToLastParenthesis;
-            Newa = 
-                a.Substring(0, FirstIndexToFirstParenthesis) +
-                LastStr +
-                a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length, hmm) +
-                FirstStr +
-                a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length + hmm + LastStr.Length, LastIndexToLastParenthesis);
+            int hmm;
+            string hmm01;
+            string hmm02;
+            string hmm03;
+            if(ParenthesisCounter > 2)
+            {
+                hmm = a.Length - FirstStr.Length - LastStr.Length - FirstIndexToFirstParenthesis - LastIndexToLastParenthesis;
+                hmm01 = a.Substring(0, FirstIndexToFirstParenthesis);
+                hmm02 = a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length, hmm);
+                hmm03 = a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length + hmm + LastStr.Length, LastIndexToLastParenthesis);
+                Newa =
+                    hmm01 +
+                    LastStr +
+                    hmm02 +
+                    FirstStr +
+                    hmm03;
+            }
+            else
+            {
+                hmm = a.Length - FirstIndexToFirstParenthesis - LastIndexToLastParenthesis;
+                hmm01 = a.Substring(0, FirstIndexToFirstParenthesis);
+                hmm02 = a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length, hmm+1);
+                Newa =
+                    hmm01 +
+                    LastStr +
+                    hmm02;
+            }
             for (int i = 0; i < Newa.Length; i++)
             {
                 if(Newa[i] == '(' || Newa[i] == ')')
