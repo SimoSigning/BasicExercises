@@ -7,12 +7,74 @@ namespace BasicExercises
         static void Main(string[] args)
         {
             Task currentTask = new Task();
+            //62
+            Console.WriteLine("For big string");
+            currentTask.task62("ab(cd(ef)gh)ij");
+            Console.WriteLine("For small string");
+            currentTask.task62("(p(rq)st)");
+            //61
+           // currentTask.task61(new int[] { -5, 236, 120, 70, -5, -5, 698, 280 });
+            //60
+        /*    Console.WriteLine(currentTask.task60(
+                new int[][] {
+                    new int[]{0, 2, 3, 2},
+                    new int[]{0, 6, 0, 1},
+                    new int[]{4, 0, 3, 0}
+                }));
+            Console.WriteLine(currentTask.task60(
+                new int[][] {
+                    new int[]{1, 2, 1, 0 },
+                    new int[]{0, 5, 0, 0},
+                    new int[]{1, 1, 3, 10 }
+                }));
+            Console.WriteLine(currentTask.task60(
+                new int[][] {
+                    new int[]{1, 1},
+                    new int[]{2, 2},
+                    new int[]{3, 3},
+                    new int[]{4, 4}
+                }));*/
+            //59
+            /*  Console.WriteLine(currentTask.task59(new int[] { 1, 8, 4, 6, 3, 7 }));
+              Console.WriteLine(currentTask.task59(new int[] { 1, 3, 5, 6, 9 }));
+              Console.WriteLine(currentTask.task59(new int[] { 0, 10 }));
+              Console.WriteLine(currentTask.task59(new int[] { 1, 3, 1, 3 }));*/
+            //58
+            /*    Console.WriteLine(currentTask.task58(new int[] { 1, 3, 5, 6, 9 }));
+                Console.WriteLine(currentTask.task58(new int[] { 0, 10 }));*/
+            //57
+            /*  Console.WriteLine(currentTask.task57(new int[] { 1, 3, 4, 5, 2 }));
+              Console.WriteLine(currentTask.task57(new int[] { 1, 3, -4, 5, 2 }));
+              Console.WriteLine(currentTask.task57(new int[] { 1, 0, -4, 0, 2 }));*/
+            //56
+            /*   Console.WriteLine(currentTask.task56("abba"));
+               Console.WriteLine(currentTask.task56("abababa"));
+               Console.WriteLine(currentTask.task56("abcd"));*/
+            //55
+            /*   Console.WriteLine(currentTask.task55(new int[] { 2, 4, 2, 6, 9, 3 }, 27));
+               Console.WriteLine(currentTask.task55(new int[] { 0, -1, -1, -2 }, 2));
+               Console.WriteLine(currentTask.task55(new int[] { 6, 1, 12, 3, 1, 4 }, 36));
+               Console.WriteLine(currentTask.task55(new int[] { 1, 4, 3, 0 }, 16));*/
+            //54
+            /*    Console.WriteLine(currentTask.task54(1954)); //20
+                Console.WriteLine(currentTask.task54(700)); //8
+                Console.WriteLine(currentTask.task54(52)); // 1
+                Console.WriteLine(currentTask.task54(7)); //1
+                Console.WriteLine(currentTask.task54(1456)); //15
+                Console.WriteLine(currentTask.task54(2020)); //21
+                //53
+                /*  Console.WriteLine(currentTask.task53(new int[] {2, 6, 2, 8, 4, 7 }));
+                  Console.WriteLine(currentTask.task53(new int[] { 2, 6, 2, 8, 4, 2 }));*/
+            //52
+            //   currentTask.task52(new int[] {1, 2, 5}, new int[] {0, 3, 8}, new int[] {-1, 0, 2});
+            //51
+            //   Console.WriteLine(currentTask.task51(new int[]{1, 2, 5, 7, 8 }));
             //50
-         //   currentTask.task50(new int[]{1,2,3});
+            //   currentTask.task50(new int[]{1,2,3});
             //49
-          /*  Console.WriteLine(currentTask.task49(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }, new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }));
-            Console.WriteLine(currentTask.task49(new int[] { 9, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }, new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }));
-            Console.WriteLine(currentTask.task49(new int[] { 9, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }, new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }));*/
+            /*  Console.WriteLine(currentTask.task49(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }, new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }));
+              Console.WriteLine(currentTask.task49(new int[] { 9, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }, new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }));
+              Console.WriteLine(currentTask.task49(new int[] { 9, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }, new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 9 }));*/
             //48
             /*  Console.WriteLine(currentTask.task48(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 }));
               Console.WriteLine(currentTask.task48(new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 2 }));*/

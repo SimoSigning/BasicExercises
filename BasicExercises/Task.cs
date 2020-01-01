@@ -6,6 +6,268 @@ namespace BasicExercises
 {
     class Task
     {
+        public void task62(string a)
+        {
+            string Newa = "";
+            string FirstStr = "";
+            string LastStr = "";
+            int FirstParenthesisIndex = 0;
+            int LastParenthesisindex = 0;
+            int FirstIndexToFirstParenthesis = 0;
+            int LastIndexToLastParenthesis = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] == '(')
+                {
+                    FirstIndexToFirstParenthesis++;
+                    FirstParenthesisIndex = i;
+                    break;
+                }
+                else
+                {
+                    FirstIndexToFirstParenthesis++;
+                }
+            }
+            for (int i = a.Length - 1; i > 0; i--)
+            {
+                if (a[i] == ')')
+                {
+                    LastIndexToLastParenthesis++;
+                    LastParenthesisindex = i;
+                    break;
+                }
+                else
+                {
+                    LastIndexToLastParenthesis++;
+                }
+            }
+            for (int i = FirstParenthesisIndex + 1; i < a.Length; i++)
+            {
+                if (a[i] == '(' || a[i] == ')')
+                {
+                    break;
+                }
+                else
+                {
+                    FirstStr += a[i];
+                }
+            }
+            for (int i = LastParenthesisindex - 1; i > 0; i--)
+            {
+                if (a[i] == '(' || a[i] == ')')
+                {
+                    break;
+                }
+                else
+                {
+                    LastStr += a[i];
+                }
+            }
+            char[] FirstStrChar = FirstStr.ToCharArray();
+            for (int i = 0; i < FirstStrChar.Length; i++)
+            {
+                FirstStrChar[i] = FirstStrChar[FirstStrChar.Length - 1 - i];
+            }
+            FirstStrChar[FirstStrChar.Length - 1] = FirstStr[0];
+            FirstStr = "";
+            for (int i = 0; i < FirstStrChar.Length; i++)
+            {
+                FirstStr += FirstStrChar[i];
+            }
+            int hmm = a.Length - FirstStr.Length - LastStr.Length - FirstIndexToFirstParenthesis - LastIndexToLastParenthesis;
+            Newa = 
+                a.Substring(0, FirstIndexToFirstParenthesis) +
+                LastStr +
+                a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length, hmm) +
+                FirstStr +
+                a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length + hmm + LastStr.Length, LastIndexToLastParenthesis);
+
+            Console.WriteLine(Newa);
+            Console.WriteLine(a);
+
+            /*
+            Console.WriteLine("For big string");
+            currentTask.task62("ab(cd(ef)gh)ij");
+            Console.WriteLine("For small string");
+            currentTask.task62("(p(rq)st)");
+             */
+        }
+
+        /*
+        public void task61(int[] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = i; j < a.Length; j++)
+                {
+                    if(a[i] != -5 && a[j] != -5 && a[j] < a[i])
+                    {
+                        int Temp = a[i];
+                        a[i] = a[j];
+                        a[j] = Temp;
+                    }
+                }
+            }
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
+        public int task60(int[][] a)
+        {
+            int Summer = 0;
+            for (int i = 0; i < a.Length-1; i++)
+            {
+                for (int j = 0; j < a[i].Length; j++)
+                {
+                    if(a[i][j] == 0)
+                    {
+                        a[i + 1][j] = 0;
+                    }
+                }
+            }
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < a[i].Length; j++)
+                {
+                    Summer += a[i][j];
+                }
+            }
+            return Summer;
+                              
+                     new int[][] {
+                    new int[]{1, 0, 3, 2},
+                    new int[]{0, 6, 0, 1},
+                    new int[]{4, 0, 3, 0}
+                    
+        }
+        
+        public bool task59(int[] a)
+        {
+            bool IsItPossible = true;
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = i+1; j < a.Length; j++)
+                {
+                    if (a[i] == a[j])
+                    {
+                        IsItPossible = false;
+                        break;
+                    }
+                }
+            }
+            return IsItPossible;
+        }
+        public int task58(int[] a)
+        {
+            int Min = a[0];
+            int Max = a[0];
+            int Counter = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if(a[i] > Max)
+                {
+                    Max = a[i];
+                }
+
+                if(a[i] < Min)
+                {
+                    Min = a[i];
+                }
+            }
+            for (int i = Min; i <= Max; i++)
+            {
+                Counter++;
+            }
+            int Missing = Counter - a.Length;
+            return Missing;
+        }
+        public int task57(int[] a)
+        {
+            int Max = a[0] * a[1];
+            for (int i = 0; i < a.Length - 1; i++)
+            {
+                if (a[i] * a[i + 1] > Max)
+                {
+                    Max = a[i] * a[i + 1];
+                }
+            }
+            return Max;
+        }
+        public bool task56(string a)
+        {
+            bool returner = true;
+            for (int i = 0;  i<a.Length; i++)
+            {
+                if(a[i] != a[a.Length-1-i])
+                {
+                    returner = false;
+                    break;
+                }
+            }
+            return returner;
+        }
+        public bool task55(int[] a, int b)
+        {
+            int Max = a[0] * a[1];
+            for (int i = 0; i < a.Length-1; i++)
+            {
+                if(a[i]*a[i+1] > Max)
+                {
+                    Max = a[i] * a[i + 1];
+                }
+            }
+            if(Max == b)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public double task54(double a)
+        {
+                return Math.Ceiling(a/ 100);
+        }
+        public bool task53(int[] a)
+        {
+            bool Returner = false;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if(a[i] % 2 != 0)
+                {
+                    Returner = true;
+                    break;
+                }
+            }
+            return Returner;
+        }
+        public void task52(int[] a, int[] b, int[] c)
+        {
+            int[][] ArrArr = { a, b, c };
+            int[] NewArr = new int[3];
+            for (int i = 0; i < NewArr.Length; i++)
+            {
+                NewArr[i] = ArrArr[i][(ArrArr[i].Length-1)/ 2];
+            }
+            for (int i = 0; i < NewArr.Length; i++)
+            {
+                Console.WriteLine(NewArr[i]);
+            }
+        }
+        public int task51(int[] a)
+        {
+            int Max = a[0];
+            for (int i = 0; i < a.Length; i++)
+            {
+                if(a[i] > Max)
+                {
+                    Max = a[i];
+                }
+            }
+            return Max;
+        }
         public void task50(int[] a)
         {
             int first = a[0];
@@ -362,7 +624,7 @@ namespace BasicExercises
             }
             return "The Longest word in the string is: " + wordArray[LongestIndex];
             //Løsning uden split for the lolz
-         /*   int SpaceCounter = 0;
+            int SpaceCounter = 0;
             for (int i = 0; i < a.Length; i++)
             {
                 if(a[i] == ' ')
@@ -405,8 +667,8 @@ namespace BasicExercises
                     MaxLengthIndex = i;
                 }
             }
-            return "The longest word in the string is: " + wordString[MaxLengthIndex];*/
-        }
+            return "The longest word in the string is: " + wordString[MaxLengthIndex];
+        } 
         public string task23(string a)
         {
             string UpperABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ#";
@@ -606,6 +868,6 @@ namespace BasicExercises
         public string task1(string Name)
         {
             return "Hello " + Name;
-        }
+        }*/
     }
 }
