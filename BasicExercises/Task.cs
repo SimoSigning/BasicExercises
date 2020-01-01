@@ -81,16 +81,14 @@ namespace BasicExercises
                 a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length, hmm) +
                 FirstStr +
                 a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length + hmm + LastStr.Length, LastIndexToLastParenthesis);
-
+            for (int i = 0; i < Newa.Length; i++)
+            {
+                if(Newa[i] == '(' || Newa[i] == ')')
+                {
+                    Newa = Newa.Remove(i, 1);
+                }
+            }
             Console.WriteLine(Newa);
-            Console.WriteLine(a);
-
-            /*
-            Console.WriteLine("For big string");
-            currentTask.task62("ab(cd(ef)gh)ij");
-            Console.WriteLine("For small string");
-            currentTask.task62("(p(rq)st)");
-             */
         }
 
         /*
