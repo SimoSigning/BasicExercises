@@ -7,118 +7,89 @@ namespace BasicExercises
     class Task
     {
         public void task62(string a)
-        { //En dag når jeg får tid skal jeg prøve at lave en mere elegant og mindre rodet løsning. Men det her giver forventet output til de foreslåede input..
-            string Newa = "";
-            string FirstStr = "";
-            string LastStr = "";
-            int FirstParenthesisIndex = 0;
-            int LastParenthesisindex = 0;
-            int FirstIndexToFirstParenthesis = 0;
-            int LastIndexToLastParenthesis = 0;
+        {
+            bool FirstIndexParenthesis = false;
             int ParenthesisCounter = 0;
-            for (int i = 0; i < a.Length; i++)
+            string Newa = "";
+            char[] aCharArr = a.ToCharArray();
+            for (int i = 0; i < aCharArr.Length; i++)
             {
-                if(a[i] == '(' || a[i] == ')')
+                if(i == 0 && aCharArr[i] == '(')
+                {
+                    FirstIndexParenthesis = true;
+                    ParenthesisCounter++;
+                }
+                else if(aCharArr[i] == '(' || aCharArr[i] == ')')
                 {
                     ParenthesisCounter++;
                 }
             }
-            for (int i = 0; i < a.Length; i++)
+            for (int i = 0; i < aCharArr.Length; i++)
             {
-                if (a[i] == '(')
+                if(aCharArr[i] == '(' || aCharArr[i] == ')')
                 {
-                    FirstIndexToFirstParenthesis++;
-                    FirstParenthesisIndex = i;
-                    break;
-                }
-                else
-                {
-                    FirstIndexToFirstParenthesis++;
+                    aCharArr[i] = ' ';
                 }
             }
-            for (int i = a.Length - 1; i > 0; i--)
+            for (int i = 0; i < aCharArr.Length; i++)
             {
-                if (a[i] == ')')
-                {
-                    LastIndexToLastParenthesis++;
-                    LastParenthesisindex = i;
-                    break;
-                }
-                else
-                {
-                    LastIndexToLastParenthesis++;
-                }
+                Newa += aCharArr[i];
             }
-            for (int i = FirstParenthesisIndex + 1; i < a.Length; i++)
+            Newa = Newa.Trim();
+            string[] aArray = Newa.Split(" ");
+            if(ParenthesisCounter == 2)
             {
-                if (a[i] == '(' || a[i] == ')')
+                string SegmentToChange = aArray[(aArray.Length - 1) / 2];
+                string NewSegment = "";
+                for (int i = SegmentToChange.Length-1; i>= 0; i--)
                 {
-                    break;
+                    NewSegment += SegmentToChange[i];
                 }
-                else
+                aArray[(aArray.Length - 1) / 2] = NewSegment;
+                string NewString = "";
+                for (int i = 0; i < aArray.Length; i++)
                 {
-                    FirstStr += a[i];
+                    NewString += aArray[i];
                 }
-            }
-            for (int i = LastParenthesisindex - 1; i > 0; i--)
-            {
-                if (a[i] == '(' || a[i] == ')')
-                {
-                    break;
-                }
-                else
-                {
-                    LastStr += a[i];
-                }
-            }
-            char[] FirstStrChar = FirstStr.ToCharArray();
-            for (int i = 0; i < FirstStrChar.Length; i++)
-            {
-                FirstStrChar[i] = FirstStrChar[FirstStrChar.Length - 1 - i];
-            }
-            FirstStrChar[FirstStrChar.Length - 1] = FirstStr[0];
-            FirstStr = "";
-            for (int i = 0; i < FirstStrChar.Length; i++)
-            {
-                FirstStr += FirstStrChar[i];
-            }
-            int hmm;
-            string hmm01;
-            string hmm02;
-            string hmm03;
-            if(ParenthesisCounter > 2)
-            {
-                hmm = a.Length - FirstStr.Length - LastStr.Length - FirstIndexToFirstParenthesis - LastIndexToLastParenthesis;
-                hmm01 = a.Substring(0, FirstIndexToFirstParenthesis);
-                hmm02 = a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length, hmm);
-                hmm03 = a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length + hmm + LastStr.Length, LastIndexToLastParenthesis);
-                Newa =
-                    hmm01 +
-                    LastStr +
-                    hmm02 +
-                    FirstStr +
-                    hmm03;
+                Console.WriteLine(NewString);
             }
             else
             {
-                hmm = a.Length - FirstIndexToFirstParenthesis - LastIndexToLastParenthesis;
-                hmm01 = a.Substring(0, FirstIndexToFirstParenthesis);
-                hmm02 = a.Substring(FirstIndexToFirstParenthesis + FirstStr.Length, hmm+1);
-                Newa =
-                    hmm01 +
-                    LastStr +
-                    hmm02;
-            }
-            for (int i = 0; i < Newa.Length; i++)
-            {
-                if(Newa[i] == '(' || Newa[i] == ')')
+                string First = aArray[0];
+                string Last = aArray[aArray.Length - 1];
+                string[] reversedaArray = new string[aArray.Length];
+                int ReverseArrayCounter = 0;
+                for (int i = aArray.Length-1; i >= 0; i--)
                 {
-                    Newa = Newa.Remove(i, 1);
+                    reversedaArray[ReverseArrayCounter] = aArray[i];
+                    ReverseArrayCounter++;
                 }
+                for (int i = 0; i < reversedaArray.Length; i++)
+                {
+                    if(i != (reversedaArray.Length-1)/2)
+                    {
+                        char[] CurrIndex = reversedaArray[i].ToCharArray();
+                        string CurrIndexReversed = "";
+                        for (int j = CurrIndex.Length-1; j >= 0; j--)
+                        {
+                            CurrIndexReversed += CurrIndex[j];
+                        }
+                        reversedaArray[i] = CurrIndexReversed;
+                    }
+                }
+                if(FirstIndexParenthesis == false)
+                {
+                    reversedaArray[0] = First;
+                    reversedaArray[reversedaArray.Length - 1] = Last;
+                }
+                string NewString = "";
+                for (int i = 0; i < reversedaArray.Length; i++)
+                {
+                    NewString += reversedaArray[i];
+                }
+                Console.WriteLine(NewString);
             }
-            Console.WriteLine(Newa);
         }
-
         /*
         public void task61(int[] a)
         {
@@ -160,12 +131,6 @@ namespace BasicExercises
                 }
             }
             return Summer;
-                              
-                     new int[][] {
-                    new int[]{1, 0, 3, 2},
-                    new int[]{0, 6, 0, 1},
-                    new int[]{4, 0, 3, 0}
-                    
         }
         
         public bool task59(int[] a)

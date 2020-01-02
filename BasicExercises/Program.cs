@@ -9,30 +9,34 @@ namespace BasicExercises
             Task currentTask = new Task();
             //62
             currentTask.task62("p(rq)st");
-            currentTask.task62("ab(cd(ef)gh)ij");
             currentTask.task62("(p(rq)st)");
+            currentTask.task62("ab(cd(ef)gh)ij");
+            /*
+             Hvis man nu bare reverser alt og sætter enderne tilbage til normal ved at have lagret dem først, og så laver en individuel derp
+             løsning til den første hvor det pludselig gør sig gældende at midten skal reverses.
+             */
             //61
-           // currentTask.task61(new int[] { -5, 236, 120, 70, -5, -5, 698, 280 });
+            // currentTask.task61(new int[] { -5, 236, 120, 70, -5, -5, 698, 280 });
             //60
-        /*    Console.WriteLine(currentTask.task60(
-                new int[][] {
-                    new int[]{0, 2, 3, 2},
-                    new int[]{0, 6, 0, 1},
-                    new int[]{4, 0, 3, 0}
-                }));
-            Console.WriteLine(currentTask.task60(
-                new int[][] {
-                    new int[]{1, 2, 1, 0 },
-                    new int[]{0, 5, 0, 0},
-                    new int[]{1, 1, 3, 10 }
-                }));
-            Console.WriteLine(currentTask.task60(
-                new int[][] {
-                    new int[]{1, 1},
-                    new int[]{2, 2},
-                    new int[]{3, 3},
-                    new int[]{4, 4}
-                }));*/
+            /*    Console.WriteLine(currentTask.task60(
+                    new int[][] {
+                        new int[]{0, 2, 3, 2},
+                        new int[]{0, 6, 0, 1},
+                        new int[]{4, 0, 3, 0}
+                    }));
+                Console.WriteLine(currentTask.task60(
+                    new int[][] {
+                        new int[]{1, 2, 1, 0 },
+                        new int[]{0, 5, 0, 0},
+                        new int[]{1, 1, 3, 10 }
+                    }));
+                Console.WriteLine(currentTask.task60(
+                    new int[][] {
+                        new int[]{1, 1},
+                        new int[]{2, 2},
+                        new int[]{3, 3},
+                        new int[]{4, 4}
+                    }));*/
             //59
             /*  Console.WriteLine(currentTask.task59(new int[] { 1, 8, 4, 6, 3, 7 }));
               Console.WriteLine(currentTask.task59(new int[] { 1, 3, 5, 6, 9 }));
